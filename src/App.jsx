@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LoanForm from "./pages/LoanForm";
-import VerifierDashboard from "./pages/VerifierDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
+import LoanForm from "./components/LoanForm";
+import VerifierDashboard from "./components/VerifierDashboard";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   return (

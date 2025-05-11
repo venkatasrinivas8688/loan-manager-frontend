@@ -5,16 +5,16 @@ export default function AdminDashboard() {
   const [loans, setLoans] = useState([]);
 
   const fetchLoans = async () => {
-    const res = await axios.get("http://localhost:5000/api/loans/verifier/dashboard"); // reuse same API
+    const res = await axios.get("https://loan-manager-backend-mafo.onrender.com/api/loans/verifier/dashboard"); // reuse same API
     setLoans(res.data.loans.filter((l) => l.status === "verified"));
   };
 
   const handleApprove = async (id) => {
     console.log(id)
-    await axios.put(`http://localhost:5000/api/loans/approve/${id}`);
-    //fetchLoans(); // refresh
-    const res = await axios.get("http://localhost:5000/api/loans/verifier/dashboard");
-    setLoans(res.data.loans);
+    await axios.put(`https://loan-manager-backend-mafo.onrender.com/api/loans/approve/${id}`);
+    fetchLoans(); // refresh
+    //const res = await axios.get("https://loan-manager-backend-mafo.onrender.com/api/loans/verifier/dashboard");
+    //setLoans(res.data.loans);
   };
 
   useEffect(() => {
